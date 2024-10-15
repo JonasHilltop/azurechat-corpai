@@ -48,7 +48,7 @@ var appservice_name = toLower('${name}-app-${resourceToken}')
 // storage name must be < 24 chars, alphanumeric only. 'sto' is 3 and resourceToken is 13
 var clean_name = replace(replace(name, '-', ''), '_', '')
 var storage_prefix = take(clean_name, 8)
-var storage_name = toLower('${storage_prefix}sto${resourceToken}')
+var storage_name = toLower('azurestoragename9')
 // keyvault name must be less than 24 chars - token is 13
 var kv_prefix = take(name, 7)
 var keyVaultName = toLower('${kv_prefix}-kv-${resourceToken}')
@@ -95,10 +95,8 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
     reserved: true
   }
   sku: {
-    name: 'P0v3'
-    tier: 'Premium0V3'
-    size: 'P0v3'
-    family: 'Pv3'
+    name: 'B0'
+    tier: 'Basic'
     capacity: 1
   }
   kind: 'linux'
